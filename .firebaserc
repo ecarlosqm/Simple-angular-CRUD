@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "jobs-e2e7a": {
+      "hosting": {
+        "jobs": [
+          "jobs-e2e7a"
+        ]
+      }
+    }
+  }
+}

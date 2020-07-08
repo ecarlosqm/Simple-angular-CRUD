@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  role="button" *ngFor="let product of products; index as i;" (click)="emit(product.id)">
+        
+        <td>{{i+1}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.cost | currency}}</td>
+        <td>{{product.quantity}}</td>
+        
+      </tr>
+    </tbody>
+  </table>

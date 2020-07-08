@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-md-center">
+    <div class="col-ms-1 col-lg-5">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <h2>Login</h2>
+
+        <div [hidden]="error == ''" class="alert alert-danger">
+          {{error}}
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Usuario" required email [(ngModel)]="user" name="user" #userF="ngModel">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contrasena" required
+            [(ngModel)]="password" name="password" #passwordF="ngModel" minlength="6">
+        </div>
+
+        <div class="form-group float-right">
+          <a [routerLink]="['/signin']" routerLinkActive="router-link-active">Crea una cuenta</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid || loading">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

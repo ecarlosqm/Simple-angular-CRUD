@@ -1,0 +1,9 @@
+<div class="dropdown" *ngIf="shouldShowThisButton">
+    <button class="btn dropdown-toggle btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+        <img src="http://placehold.it/18x18" class="profile-image rounded-circle"> Username <b class="caret"></b>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="btn dropdown-item" (click)="logout()" href="#">Cerrar session</button>
+    </div>
+</div>

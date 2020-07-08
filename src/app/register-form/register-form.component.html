@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-ms-1 col-lg-5">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <h2>Crea una cuenta</h2>
+
+                <div [hidden]="error == ''" class="alert alert-danger">
+                    {{error}}
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Email" required email [(ngModel)]="email" name="email" #emailF="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Contrasena" required
+                        [(ngModel)]="password" name="password" #passwordF="ngModel" minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirmar contrasena"
+                        appSamePassword={{passwordF.value}} required [(ngModel)]="passwordConfirm"
+                        name="passwordConfirm" #passwordConfirmF="ngModel">
+                </div>
+
+                <div class="form-group float-right">
+                    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Ya tengo una cuenta</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                    [disabled]="!loginForm.form.valid || loading">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-5 mb-5">
+            <app-product-form id={{currentProductId}}></app-product-form>
+        </div>
+        <div class="col-lg-7 col-md-12">
+            <button class="btn btn-primary float-right mb-2" (click)="newProduct()">
+                Nuevo
+            </button>
+            <app-product-list (onProductClick)="onSelectProduct($event)"></app-product-list>
+        </div>
+    </div>
+    
+</div>
